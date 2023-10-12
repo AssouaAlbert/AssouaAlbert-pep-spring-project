@@ -14,9 +14,6 @@ import com.example.entity.Message;
 
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Integer> {
-    // List<Message> findAllByPosedBy(Integer account_id);
-    //  List<Message> findByUsername(String username);
-    // List<Message> findByPostedBy(Integer account_id);
      @Query("SELECT e FROM Message e WHERE e.posted_by = :userId")
     List<Message> findByPostedBy(@Param("userId") Integer  userId);
 }

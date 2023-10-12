@@ -39,6 +39,5 @@ public class MessageService {
 
     public List<Message> getUserMessages(Integer account_id) {
         return MessageDAO.findByPostedBy(account_id);
-        // return null;
     }
 }
